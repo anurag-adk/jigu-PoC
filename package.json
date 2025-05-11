@@ -1,0 +1,28 @@
+{
+  "name": "jigu-poc",
+  "version": "1.0.0",
+  "description": "proof of concept to check the feasibility of the project jigu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anurag-adk/jigu-PoC.git"
+  },
+  "author": "Anurag Adhikari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anurag-adk/jigu-PoC/issues"
+  },
+  "homepage": "https://github.com/anurag-adk/jigu-PoC#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
