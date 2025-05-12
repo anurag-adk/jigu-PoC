@@ -12,15 +12,18 @@ const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
   dialect: "postgres",
 });
 
-const sqlConnect = () => {
-  sequelize
-    .authenticate()
-    .then(() => {
-      console.log("Database connection successfully!");
-    })
-    .catch((err) => {
-      console.error("Database connection failed!", err);
-    });
+const sqlConnect = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log("Database connection successfully!");
+    //sync all models at once
+    await sequelize.sync();
+    console.log("Database synced");
+  } catch (err) {
+    console.error("Database connection failed!", err);
+  }
 };
 
-module.exports = sqlConnect();
+sqlConnect(); //this is just to connect db
+
+module.exports = sequelize; //export sequelize since models need to to access sequelize to use .define()

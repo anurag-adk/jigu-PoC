@@ -8,6 +8,9 @@ const app = express();
 //Database Connection
 require("./config/sequelize.config");
 
+//Models
+require("./models/phrase.model");
+
 app.listen(PORT, () => {
   console.log(`Server started at PORT: ${PORT}`);
 });
