@@ -10,15 +10,16 @@ const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
   host: DB_HOST,
   port: DB_PORT,
   dialect: "postgres",
+  logging: false, //sql query loggs in console by default which was annoying so disabled it
 });
 
 const sqlConnect = async () => {
   try {
     await sequelize.authenticate();
-    console.log("Database connection successfully!");
+    console.log("Database connection successful!");
     //sync all models at once
     await sequelize.sync();
-    console.log("Database synced");
+    console.log("Database synced!");
   } catch (err) {
     console.error("Database connection failed!", err);
   }
